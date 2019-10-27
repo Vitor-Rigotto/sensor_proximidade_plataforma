@@ -1,3 +1,7 @@
+//Programa : Sensor de Proximidade para plataforma de embarque
+//Autor : Vitor Rigotto
+//Data de início: 27/10/2019
+
 #define trigPin 8
 #define echoPin 7
 #define pino_luz 5

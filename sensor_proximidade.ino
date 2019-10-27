@@ -29,11 +29,11 @@ void loop(){
     // Lê o echoPin. pulseIn () retorna a duração (duração do pulso) em microssegundos:
     duration = pulseIn(echoPin, HIGH);
 
-    // Calcula adistância:
+    // Calcula a distância:
     distance = duration * 0.034 / 2;
 
     // Imprime a distância no Monitor Serial (Ctrl+Shift+M)
-    Serial.print("Distance = ");
+    Serial.print("Distancia = ");
     Serial.print(distance);
     Serial.println(" cm");
     delay(500);

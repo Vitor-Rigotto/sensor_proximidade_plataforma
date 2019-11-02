@@ -44,7 +44,7 @@ void loop(){
     delay(500);
 
     //primeira vez que a luz acende
-    if(distancia = 27){
+    if(distance = 27){
       acendeu = false //já não será mais a prmeira vez
         for(int i = 0; i<1; i++){
           digitalWrite(pino_luz, HIGH);

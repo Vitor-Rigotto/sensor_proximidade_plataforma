@@ -50,7 +50,7 @@ void loop(){
           switch(distance){
           case(18):
           digitalWrite(pino_luz, LOW);
-          delay(5000);
+          delay(30000);
           digitalWrite(pino_luz, HIGH);
           delay(1500);
 

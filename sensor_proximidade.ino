@@ -9,6 +9,7 @@
 // Definição Variáveis:
 long duration;
 int distance;
+bool acendeu = true;
 
 void setup(){
     // Define entradas e saídas
@@ -42,16 +43,18 @@ void loop(){
     Serial.println(" cm");
     delay(500);
 
-    switch (distance){
-
-        case (27):
-            digitalWrite(pino_luz, HIGH);
-            Serial.print("Chegou \n");
-            delay(5000);
+    //primeira vez que a luz acende
+    if(distancia = 27){
+      acendeu = false //já não será mais a prmeira vez
+        for(int i = 0; i<1; i++){
+          digitalWrite(pino_luz, HIGH);
+          delay(5000);
+          digitalWrite(pino_luz, LOW);
+          delay(1500);
+          }
+          
+          else{
             digitalWrite(pino_luz, LOW);
-            break;
-
-        default:
-            break;
-        }
+            }
+   }
 }

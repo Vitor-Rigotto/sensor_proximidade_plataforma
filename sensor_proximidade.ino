@@ -9,7 +9,7 @@
 // Definição Variáveis:
 long duration;
 int distance;
-bool acendeu = true;
+bool acendeu = false;
 
 void setup(){
     // Define entradas e saídas
@@ -44,17 +44,22 @@ void loop(){
     delay(500);
 
     //primeira vez que a luz acende
-    if(distance = 27){
-      acendeu = false //já não será mais a prmeira vez
+    if(acendeu = true){
+      acendeu = false; //já não será mais a prmeira vez
         for(int i = 0; i<1; i++){
-          digitalWrite(pino_luz, HIGH);
-          delay(5000);
+          switch(distance){
+          case(18):
           digitalWrite(pino_luz, LOW);
+          delay(5000);
+          digitalWrite(pino_luz, HIGH);
           delay(1500);
+
+          default:
+          break;
           }
+        }
           
-          else{
+            }else{
             digitalWrite(pino_luz, LOW);
             }
-   }
-}
+  }

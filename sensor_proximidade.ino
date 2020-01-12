@@ -5,22 +5,32 @@
 #define trigPin 8
 #define echoPin 7
 #define pino_luz 5
+#define alimentacao_sensor 4 /*pino digital usado para alimentar o sensor
+devido a falta de pinos de alimentação 5V no arduino e impossibilidade de derivar
+cabos*/
 
 // Definição Variáveis:
 long duration;
 int distance;
-bool acendeu = false;
+bool acendeu = true;
 
 void setup(){
     // Define entradas e saídas
     pinMode(trigPin, OUTPUT);
     pinMode(echoPin, INPUT);
     pinMode(pino_luz, OUTPUT);
+    pinMode(alimentacao_sensor,OUTPUT);
 
+    /*irá fazer com que o pino sempre esteja escrevndo
+     * para que a alimentção do sensor seje constante
+     */
+    digitalWrite(alimentacao_sensor, HIGH);
+    
     Serial.begin(9600);
 }
 
 void loop(){
+  
     // Limpa o trigPin inicializando ele como LOW
     digitalWrite(trigPin, LOW);
 
@@ -44,20 +54,22 @@ void loop(){
     delay(500);
 
     //primeira vez que a luz acende
+    
     if(acendeu = true){
       acendeu = false; //já não será mais a prmeira vez
+        
         for(int i = 0; i<1; i++){
-          switch(distance){
-          case(18):
-          digitalWrite(pino_luz, LOW);
-          delay(30000);
+          if(distance <= 60){
+          digitalWrite(pino_luz, i);
+          delay(10000);
           digitalWrite(pino_luz, HIGH);
-          delay(1500);
-
-          default:
-          break;
           }
-        }
+         
+         if (acendeu == false){
+          digitalWrite (pino_luz, HIGH);
+         }
+       
+       }
           
             }else{
             digitalWrite(pino_luz, LOW);

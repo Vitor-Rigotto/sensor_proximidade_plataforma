@@ -12,7 +12,6 @@ cabos*/
 // Definição Variáveis:
 long duration;
 int distance;
-bool acendeu = true;
 
 void setup(){
     // Define entradas e saídas
@@ -51,27 +50,14 @@ void loop(){
     Serial.print("Distancia = ");
     Serial.print(distance);
     Serial.println(" cm");
-    delay(500);
-
-    //primeira vez que a luz acende
+    delay(250);
     
-    if(acendeu = true){
-      acendeu = false; //já não será mais a prmeira vez
-        
-        for(int i = 0; i<1; i++){
-          if(distance <= 60){
-          digitalWrite(pino_luz, i);
-          delay(10000);
-          digitalWrite(pino_luz, HIGH);
-          }
-         
-         if (acendeu == false){
-          digitalWrite (pino_luz, HIGH);
-         }
-       
+    if(distance < 62){ 
+      digitalWrite(pino_luz, LOW);
+      Serial.print ("Acendeu \n");//liga luz caso a distância entre o sensor e o objeto seje inferior a 62 cm
        }
-          
-            }else{
-            digitalWrite(pino_luz, LOW);
+                 
+         else{
+            digitalWrite(pino_luz, HIGH);
             }
   }

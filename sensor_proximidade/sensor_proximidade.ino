@@ -53,11 +53,11 @@ void loop(){
     delay(250);
     
     if(distance < 62){ 
-      digitalWrite(pino_luz, LOW);
+      digitalWrite(pino_luz, 0);
       Serial.print ("Acendeu \n");//liga luz caso a distância entre o sensor e o objeto seje inferior a 62 cm
        }
                  
          else{
-            digitalWrite(pino_luz, HIGH);
+            digitalWrite(pino_luz, 1);
             }
   }
